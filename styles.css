@@ -12,7 +12,7 @@
     --font: "Commissioner", serif;
 }
 body{
-    background: hsl(180, 100%, 99%);
+    background: hsl(0, 0%, 95%);
     font-family: var(--font);
     color: var(--Dark-gray);
     line-height: 1.55;
@@ -55,6 +55,8 @@ header{
 .mobile-menu-btn{
     background: none;
     cursor: pointer;
+    outline: none;
+    border: none;
 }
 .mobile-nav-wrapper.open .mobile-menu-btn .open-menu{
     display: none;
@@ -66,8 +68,42 @@ header{
     display: flex;
 }
 .mobile-nav{
-    display: none;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: white;
+    width: 100%;
+    border-radius: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: height .3s linear;
 }
+.mobile-nav-wrapper.open .mobile-nav{
+    height: auto;
+}
+.mobile-nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.mobile-nav ul li{
+   display: flex;
+   width: 100%;
+}
+.mobile-nav ul li:not(:last-of-type){
+    border-bottom: 1px solid hsl(0, 0%, 73%);
+}
+.mobile-nav ul li a{
+    text-decoration: none;
+    color: var(--Black);
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 100%;
+    padding: 1.5rem;
+}
+
 .hero-image img{
     width: 100%;
 }
@@ -81,25 +117,26 @@ header{
     right: 0;
     left: 0;
     margin-inline: auto;
+    gap: 1.5rem;
+    padding-bottom: 4rem;
 }
 .box-one,
 .box-two,
 .box-three{
     background: white;
     display: flex;
-    flex-direction: column;
     position: relative;
     border: 1px solid hsl(0, 0%, 90%);
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     font-size: .9rem;
 
 }
 .box-one{
+    flex-direction: column;
     text-align: center;
     align-items: center;
     padding-top: 3rem;
-    padding-bottom: 1.5rem;
     gap: 1em;
     width: 100%;
     
@@ -169,17 +206,147 @@ header{
     font-weight: 700;
     font-size: .8rem;
 }
+.box-two{
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+.revenue-details{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+.revenue-details hr {
+    border-top: 1px solid hsl(180, 10%, 79%);
+    width: 5em;
+}
+.revenue-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.revenue-top{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--Black);
+    line-height: 1.45;
+}
+.progress-bar{
+    width: 100%;
+    height: 12px;
+    background: hsl(180, 11%, 95%);
+    border-radius: 10px;
+}
+.progress{
+    height: 100%;
+    width: 75%;
+    background: var(--Moderate-cyan);
+    border-radius: 10px;
+}
+.box-three{
+    flex-direction: column;
+    gap: 1rem;
+}
+.about-text{
+    font-weight: 700;
+    color: var(--Black);
+}
+.box-three-card-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.box-three-card{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    border: 1px solid hsl(180, 4%, 86%);
+    padding: 1.4rem;
+    border-radius: 8px;
+}
+.stand-details{
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+}
+.people-left{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+.name{
+    font-weight: 700;
+    color: var(--Black);
+}
+.pledge{
+    color: var(--Moderate-cyan);
+    font-weight: 700;
+}
+.number{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--Black);
+}
+.btn{
+    width: max-content;
+    font-family: inherit;
+    font-size: .75rem;
+    font-weight: 700;
+    padding: 1.25em 2.5em;
+    background: hsl(176, 50%, 47%);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--Dark-cyan);
+}
+.box-three-card.out {
+    opacity: .45;
+}
+.box-three-card.out .btn{
+    background: hsl(0, 0%, 73%);
+}
+.contrast-modal{
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: .6;
+}
+.mobile-nav-wrapper.open .contrast-modal{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (min-width:768px){
     .box-one{
-        padding: 4rem;
+        padding: 4rem 3rem 3rem;
     }
     .main-details{
         max-width: 690px;
     }
     .box-one-buttons{
         justify-content: space-between;
+        margin: 1rem 0 0 0;
     }
     .bookmark-text{
         display: block;
