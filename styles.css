@@ -103,7 +103,9 @@ header{
     width: 100%;
     padding: 1.5rem;
 }
-
+.mobile-nav ul li a:hover{
+    background-color: hsla(0, 0%, 62%, 0.1);
+}
 .hero-image img{
     width: 100%;
 }
@@ -130,7 +132,6 @@ header{
     border-radius: 8px;
     padding: 2rem 1.5rem;
     font-size: .9rem;
-
 }
 .box-one{
     flex-direction: column;
@@ -139,13 +140,11 @@ header{
     padding-top: 3rem;
     gap: 1em;
     width: 100%;
-    
 }
 .sponsor-logo{
     position: absolute;
     top: 0;
     transform: translateY(-50%);
-
 }
 .sponsor-logo img{
     width: 100%;
@@ -190,7 +189,6 @@ header{
 .bookmark:hover svg > *,
 .bookmark:hover .bookmark-text{
     opacity: .75;
-    
 }
 .bookmark.bookmarked:hover svg > *,
 .bookmark.bookmarked:hover .bookmark-text{
