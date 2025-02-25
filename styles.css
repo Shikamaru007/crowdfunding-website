@@ -396,6 +396,7 @@ header{
 }
 .modal-card.selected-card .bottom{
     display: flex;
+    height: auto;
    
 }
 .top{

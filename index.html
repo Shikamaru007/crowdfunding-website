@@ -7,7 +7,7 @@
     <script src="index.js" defer></script>
     <title>Crowdfunding</title>
 </head>
-<body class="project-modal-open">
+<body>
     <main class="container">
 
         <header>
@@ -105,7 +105,7 @@
                                 <span class="number">101</span>
                                 <span>left</span>
                             </div>
-                            <button type="button" class="btn">Select Reward</button>
+                            <button type="button" class="btn select-reward" name="bambooStand">Select Reward</button>
 
                         </div>                                                
                         <div class="box-three-card">
@@ -118,7 +118,7 @@
                                 <span class="number">64</span>
                                 <span>left</span>
                             </div>
-                            <button type="button" class="btn">Select Reward</button>
+                            <button type="button" class="btn select-reward" name="blackStand">Select Reward</button>
 
                         </div>                                                
                         <div class="box-three-card out">
@@ -131,7 +131,7 @@
                                 <span class="number">0</span>
                                 <span>left</span>
                             </div>
-                            <button type="button" class="btn">Out of stock</button>
+                            <button type="button" class="btn select-reward" disabled name="specialEdition">Out of stock</button>
 
                         </div>                                                
                     </div>
@@ -225,7 +225,7 @@
                     <label for="specialEdition" class="modal-card out">
                         <div class="top">
                          <div class="project-head">
-                             <input type="radio" name="stand" id="specialEdition" class="pledge-checkbox">
+                             <input type="radio" name="stand" id="specialEdition" class="pledge-checkbox" disabled>
                              <div class="stand-details">
                                  <p class="name">Mahogany Special Edition</p>
                                  <span class="pledge">Pledge $200 or more</span>
