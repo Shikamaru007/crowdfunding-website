@@ -12,12 +12,13 @@
     --font: "Commissioner", serif;
 }
 body{
-    background: hsl(0, 0%, 95%);
+    background: hsl(180, 38%, 97%);
     font-family: var(--font);
     color: var(--Dark-gray);
     line-height: 1.55;
 }
-.project-modal-open{
+.project-modal-open,
+.success-modal-open{
     overflow: hidden;
 }
 h1{
@@ -31,6 +32,12 @@ h2{
     color: var(--Black);
     font-weight: 700;
     font-size: 1.15rem;
+    line-height: 1.1;
+}
+h3{
+    color: var(--Black);
+    font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1.1;
 }
 .container{
@@ -67,6 +74,9 @@ header{
     cursor: pointer;
     outline: none;
     border: none;
+}
+.desktop-nav-wrapper{
+    display: none;
 }
 .mobile-nav-wrapper.open .mobile-menu-btn .open-menu{
     display: none;
@@ -275,7 +285,8 @@ header{
     padding: 1.4rem;
     border-radius: 8px;
 }
-.stand-details{
+.stand-details,
+.modal-stand-details{
     display: flex;
     flex-direction: column;
     gap: .15rem;
@@ -288,10 +299,19 @@ header{
 .name{
     font-weight: 700;
     color: var(--Black);
+    cursor: pointer;
+}
+.name:hover{
+    color: var(--Moderate-cyan);
 }
 .pledge{
     color: var(--Moderate-cyan);
     font-weight: 700;
+}
+.change{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 .number{
     font-size: 1.5rem;
@@ -338,6 +358,9 @@ header{
 .project-modal-open .project-modal{
     display: flex;
 }
+.success-modal-open .success-modal{
+    display: flex;
+}
 .project-modal{
     position: fixed;
     left: 0;
@@ -350,6 +373,7 @@ header{
     flex-direction: column;
     padding: 3rem 0;
     overflow-y: auto;
+    
 }
 .modal-details{
     background: white;
@@ -431,14 +455,20 @@ header{
     gap: 1rem;
     padding: 0 1.5rem;
 }
+.pledge-buttons > *{
+    flex: 1;
+}
 .pledge-amount-wrapper{
     display: flex;
-    padding:  .7rem 1.7rem;
+    padding:  .7rem 1.5rem;
     border:1px solid hsl(0, 0%, 73%);
     border-radius: 100px;
     width: 100%;
     align-items: center;
     gap: .5rem;
+}
+.pledge-amount-wrapper.focused{
+    border: 1px solid hsl(176, 50%, 47%);
 }
 hr{
     outline: none;
@@ -458,6 +488,7 @@ hr{
     font-weight: 700;
     font-size: 1rem;
     color: var(--Black);
+    opacity: .75;
 }
 .pledge-amount-wrapper span {
     color: hsl(0, 0%, 73%);
@@ -490,6 +521,42 @@ hr{
 .pledge-checkbox:checked::after{
     display: block;
 }
+.success-modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: hsl(0, 0%, 0%, .4);
+    width: 100%;
+    z-index: 30;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.success-details{
+    background: white;
+    width: 90%;
+    max-width: 367px;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: .9rem;
+    position: relative;
+    text-align: center;
+    align-items: center;
+}
+.success-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.success-head img{
+    max-width: 4.2rem;
+}
 
 
 
@@ -499,6 +566,30 @@ hr{
 
 
 @media screen and (min-width:768px){
+    header{
+        max-width: 80%;
+        padding: 2.5rem 0;
+    }
+    .desktop-nav-wrapper{
+        display: flex;
+    }
+    .desktop-nav ul{
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+    .desktop-nav ul li a{
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .desktop-nav ul li a:hover{
+        color: rgb(232, 232, 232);
+        
+    }
+    .mobile-nav-wrapper{
+        display: none;
+    }
     .box-one{
         padding: 4rem 3rem 3rem;
     }
@@ -515,8 +606,72 @@ hr{
     .bookmark{
         padding-right: 3.5em;
     }
+    .stand-details{
+        flex-direction: row;
+        justify-content: space-between;
+    }
     .back-project{
         width: max-content;
         padding-inline: 3.5em;
     }
+    .top{
+        display: flex;
+        flex-direction: row;
+        gap: 1.25rem;
+        padding-inline: 1.5rem;
+    }
+    .left{
+        padding-top: .25em;
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .modal-stand-details{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .top-right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .modal-people-left{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+    .modal-people-left .number{
+        font-size: 1rem;
+    }
+    .modal-details{
+        max-width: 620px;       
+    }
+   .pledge-section{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0 1.5rem;
+   }
+   .pledge-buttons{
+    width: 45%;
+    justify-content: right;
+    padding: 0;
+   }
+  
+   .pledge-buttons .btn{
+    flex: 0;
+   }
+   .bottom{
+    gap: 1.25rem;
+   }
+   .modal-card{
+    padding: 1.5rem 0;
+   }
+   .change{
+    flex-direction: row;
+    justify-content: space-between;
+   }
 }
