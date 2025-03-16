@@ -647,7 +647,8 @@ hr{
         font-size: 1rem;
     }
     .modal-details{
-        max-width: 620px;       
+        max-width: 620px; 
+        padding: 2rem;      
     }
    .pledge-section{
     flex-direction: row;
@@ -674,4 +675,19 @@ hr{
     flex-direction: row;
     justify-content: space-between;
    }
+   .box-two{
+    padding: 3rem;
+   }
+   .box-three{
+    padding: 2rem;
+   }
+   .revenue-details{
+    flex-direction: row;
+    gap: 3.5em;
+    justify-content: left;
+}
+.revenue-details hr {
+    width: 0;
+    height: 5em;
+}
 }
